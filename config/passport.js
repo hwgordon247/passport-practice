@@ -105,7 +105,7 @@ module.exports = function(passport) {
         passReqToCallback : true // allows us to pass back the entire request to the callback
     },
     function(req, email, password, done) { // callback with email and password from our form
-        myJson = require("local.json");
+        myJson = require("../local.json");
 
         if(email === myJson.email){
             if(bcrypt.compareSync(password, myJson.password)) {
